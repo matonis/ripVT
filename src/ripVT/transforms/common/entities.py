@@ -256,3 +256,11 @@ class vtfilereport(VirustotalEntity):
     pass
 
 
+class RipvtEntity(Entity):
+    _namespace_ = u'ripVT'
+
+@EntityField(name=u'properties.vtdetections', propname=u'propertiesvtdetections', displayname=u'VT Detections')
+class VTDetections(RipvtEntity):
+    pass
+
+

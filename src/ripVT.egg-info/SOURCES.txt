@@ -29,6 +29,8 @@ src/ripVT/transforms/from_behavorial_mutex_opened.py
 src/ripVT/transforms/from_behavorial_mutexes.py
 src/ripVT/transforms/from_behavorial_network_all.py
 src/ripVT/transforms/from_entity_to_imphash.py
+src/ripVT/transforms/from_report_detections_aggregated.py
+src/ripVT/transforms/from_report_detections_single.py
 src/ripVT/transforms/from_vtfilename_samples.py
 src/ripVT/transforms/from_vtreport_filename.py
 src/ripVT/transforms/from_vtreport_itw.py
@@ -36,6 +38,16 @@ src/ripVT/transforms/from_vtreport_parents.py
 src/ripVT/transforms/hash_to_cuckoo_object.py
 src/ripVT/transforms/imphash_search.py
 src/ripVT/transforms/search_behavioral.py
+src/ripVT/transforms/search_cert_issuer.py
+src/ripVT/transforms/search_cert_issuer_serial.py
+src/ripVT/transforms/search_certificate_issuer.py
+src/ripVT/transforms/search_certificate_serial.py
+src/ripVT/transforms/search_chain_head.py
+src/ripVT/transforms/search_chain_head_serial.py
+src/ripVT/transforms/search_counter_head_issuer.py
+src/ripVT/transforms/search_counter_head_serial.py
+src/ripVT/transforms/search_detection_name_with.py
+src/ripVT/transforms/search_detection_name_without.py
 src/ripVT/transforms/search_engines.py
 src/ripVT/transforms/search_exports.py
 src/ripVT/transforms/search_file_to_report.py

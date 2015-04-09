@@ -65,7 +65,7 @@ def report_to_rentity(tmp_json):
         return False
 
     e=vtfilereport(str(t_json['md5'].encode('utf-8')))
-    e.json=str(tmp_json).encode('utf-8')
+    #e.json=str(tmp_json).encode('utf-8')
     e.md5=str(t_json['md5']).encode('utf-8')
     e.sha1=str(t_json['sha1']).encode('utf-8')
     e.sha256=str(t_json['sha256']).encode('utf-8')
@@ -146,7 +146,7 @@ def report_to_rentity(tmp_json):
         e.imports=""
         e.machine=""
 
-    e.linklabel="hash->report (VT)"
+    e.linklabel="F: %s - L: %s" % (e.firstseen,e.lastseen)
 
     return e
 

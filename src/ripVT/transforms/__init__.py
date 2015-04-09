@@ -11,6 +11,18 @@ __email__ = 'dfir.matonis@gmail.com'
 __status__ = 'Development'
 
 __all__ = [
+    'search_detection_name_without',
+    'search_detection_name_with',
+    'from_report_detections_single',
+    'from_report_detections_aggregated',
+    'search_certificate_serial',
+    'search_certificate_issuer',
+    'search_counter_head_serial',
+    'search_counter_head_issuer',
+    'search_chain_head_serial',
+    'search_chain_head',
+    'search_cert_issuer_serial',
+    'search_cert_issuer',
     'from_entity_to_imphash',
     'file_send_to_cuckoo',
     'hash_to_cuckoo_object',
