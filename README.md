@@ -14,7 +14,7 @@ canari create-profile ripVT
 4. Import generated ripVT.mtz
 5. Import entities stored at:
 ```bash
-src/ripVT/resources/external
+src/ripVT/resources/external/entities.mtz
 ```
 
 6. Copy src/ripVT/resources/etc/ripVT.conf to ~/.canari/
