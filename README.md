@@ -1,5 +1,7 @@
 # ripVT
-![Visual Guide](https://github.com/matonis/ripVT/blob/master/pivot.png)
+
+Maltego Canari transforms for Virus Total private API.
+
 # Installation
 
 1. Requires Canari, specifically [this branch/version](https://github.com/allfro/canari/tree/c90ed9f0f0fb5075358d7a1a4c1080aac3d4e6bc)
@@ -19,4 +21,4 @@ src/ripVT/resources/external
 
 
 # Usage
-Pivot.
+![Visual Guide](https://github.com/matonis/ripVT/blob/master/pivot.png)
