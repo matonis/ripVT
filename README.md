@@ -2,6 +2,8 @@
 
 Maltego Canari transforms for Virus Total private API. Provided AS-IS, no warranties, no guarantees. 
 
+No jokes in this repo... because this transform set doesn't fuck around.
+
 # Installation
 
 1. Requires Canari, specifically [this branch/version](https://github.com/allfro/canari/tree/c90ed9f0f0fb5075358d7a1a4c1080aac3d4e6bc)
