@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Report to File Names',
+    label='[ripVT] - Report to File Names',
     description='Translate Report to Filenames.',
     uuids=[ 'ripVT.v2.report2filenames'],
     inputs=[ ( 'ripVT', vtfilereport )],

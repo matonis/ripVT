@@ -24,7 +24,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Report to ITW locations',
+    label='[ripVT] - Report to ITW locations',
     description='Translate Report to ITW locations.',
     uuids=[ 'ripVT.v2.report2itwloc'],
     inputs=[ ( 'ripVT', vtfilereport )],

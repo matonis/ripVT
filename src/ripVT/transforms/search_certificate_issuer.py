@@ -22,7 +22,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Search Cert Issuer (VT)',
+    label='[ripVT] - Search Cert Issuer (VT)',
     description='Searches Virus Total for hits matching cert issuer string.',
     uuids=[ 'ripVT.v2.pecert_cert_issuer_search'],
     inputs=[ ( 'ripVT', Certificate )],

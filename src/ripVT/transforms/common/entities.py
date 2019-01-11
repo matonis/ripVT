@@ -6,73 +6,29 @@ from canari.maltego.entities import EntityField, Entity
 class BinaryEntity(Entity):
     _namespace_ = u'binary'
 
+@EntityField(name=u'properties.pehash', propname=u'propertiespehash', displayname=u'PE: peHash')
+class peHash(BinaryEntity):
+    pass
+
+
 @EntityField(name=u'sha1', propname=u'sha1', displayname=None)
-@EntityField(name=u'not_after', propname=u'notafter', displayname=None)
-@EntityField(name=u'properties.certificate', propname=u'propertiescertificate', displayname=u'Certificate')
-@EntityField(name=u'serial', propname=u'serial', displayname=None)
-@EntityField(name=u'issuer', propname=u'issuer', displayname=None)
-@EntityField(name=u'not_before', propname=u'notbefore', displayname=None)
+@EntityField(name=u'language', propname=u'language', displayname=None)
+@EntityField(name=u'properties.resource', propname=u'propertiesresource', displayname=u'PE: Resource')
+@EntityField(name=u'sha512', propname=u'sha512', displayname=None)
+@EntityField(name=u'sublanguage', propname=u'sublanguage', displayname=None)
+@EntityField(name=u'res_name', propname=u'resname', displayname=None)
+@EntityField(name=u'sha256', propname=u'sha256', displayname=None)
+@EntityField(name=u'ssdeep', propname=u'ssdeep', displayname=None)
+@EntityField(name=u'yara_hits', propname=u'yarahits', displayname=None)
+@EntityField(name=u'type', propname=u'type', displayname=None)
 @EntityField(name=u'md5', propname=u'md5', displayname=None)
-@EntityField(name=u'subject', propname=u'subject', displayname=None)
-class Certificate(BinaryEntity):
+@EntityField(name=u'size', propname=u'size', displayname=None)
+class peResource(BinaryEntity):
     pass
 
 
 @EntityField(name=u'properties.ssdeep', propname=u'propertiesssdeep', displayname=u'PE: SSDeep')
 class pessdeep(BinaryEntity):
-    pass
-
-
-@EntityField(name=u'properties.export', propname=u'propertiesexport', displayname=u'PE: Export')
-class Export(BinaryEntity):
-    pass
-
-
-@EntityField(name=u'md5_decrypted', propname=u'md5decrypted', displayname=None)
-@EntityField(name=u'sha256_decrypted', propname=u'sha256decrypted', displayname=None)
-@EntityField(name=u'sha1', propname=u'sha1', displayname=None)
-@EntityField(name=u'versions', propname=u'versions', displayname=None)
-@EntityField(name=u'sha1_decrypted', propname=u'sha1decrypted', displayname=None)
-@EntityField(name=u'properties.richheader', propname=u'propertiesrichheader', displayname=u'PE: Rich Header')
-@EntityField(name=u'sha512_decrypted', propname=u'sha512decrypted', displayname=None)
-@EntityField(name=u'ssdeep', propname=u'ssdeep', displayname=None)
-@EntityField(name=u'sha256', propname=u'sha256', displayname=None)
-@EntityField(name=u'sha512', propname=u'sha512', displayname=None)
-@EntityField(name=u'ssdeep_decrypted', propname=u'ssdeepdecrypted', displayname=None)
-@EntityField(name=u'md5', propname=u'md5', displayname=None)
-class peRich(BinaryEntity):
-    pass
-
-
-@EntityField(name=u'size', propname=u'size', displayname=None)
-@EntityField(name=u'issuer_serial', propname=u'issuerserial', displayname=None)
-@EntityField(name=u'certs', propname=u'certs', displayname=None)
-@EntityField(name=u'counter_head_before', propname=u'counterheadbefore', displayname=None)
-@EntityField(name=u'issuer', propname=u'issuer', displayname=None)
-@EntityField(name=u'countersignature', propname=u'countersignature', displayname=None)
-@EntityField(name=u'counter_head_after', propname=u'counterheadafter', displayname=None)
-@EntityField(name=u'source', propname=u'source', displayname=None)
-@EntityField(name=u'program', propname=u'program', displayname=None)
-@EntityField(name=u'counter_head_issuer', propname=u'counterheadissuer', displayname=None)
-@EntityField(name=u'before', propname=u'before', displayname=None)
-@EntityField(name=u'sha512', propname=u'sha512', displayname=None)
-@EntityField(name=u'chain_head', propname=u'chainhead', displayname=None)
-@EntityField(name=u'counter_head_serial', propname=u'counterheadserial', displayname=None)
-@EntityField(name=u'timestamp', propname=u'timestamp', displayname=None)
-@EntityField(name=u'after', propname=u'after', displayname=None)
-@EntityField(name=u'chain_head_serial', propname=u'chainheadserial', displayname=None)
-@EntityField(name=u'ssdeep', propname=u'ssdeep', displayname=None)
-@EntityField(name=u'md5', propname=u'md5', displayname=None)
-@EntityField(name=u'sha1', propname=u'sha1', displayname=None)
-@EntityField(name=u'properties.pecertificate', propname=u'propertiespecertificate', displayname=u'PE: Certificate')
-@EntityField(name=u'url', propname=u'url', displayname=None)
-@EntityField(name=u'sha256', propname=u'sha256', displayname=None)
-class peCert(BinaryEntity):
-    pass
-
-
-@EntityField(name=u'properties.import', propname=u'propertiesimport', displayname=u'PE: Import')
-class peImport(BinaryEntity):
     pass
 
 
@@ -125,19 +81,6 @@ class PEFile(BinaryEntity):
     pass
 
 
-class RobertliaukusEntity(Entity):
-    _namespace_ = u'robertliaukus'
-
-@EntityField(name=u'properties.asdf', propname=u'propertiesasdf', displayname=u'asdf')
-class asdf(RobertliaukusEntity):
-    pass
-
-
-@EntityField(name=u'properties.imphash', propname=u'propertiesimphash', displayname=u'PE: Imphash')
-class peImphash(BinaryEntity):
-    pass
-
-
 @EntityField(name=u'size', propname=u'size', displayname=None)
 @EntityField(name=u'sha1', propname=u'sha1', displayname=None)
 @EntityField(name=u'sha256', propname=u'sha256', displayname=None)
@@ -149,24 +92,73 @@ class PESection(BinaryEntity):
     pass
 
 
-@EntityField(name=u'sha1', propname=u'sha1', displayname=None)
-@EntityField(name=u'language', propname=u'language', displayname=None)
-@EntityField(name=u'properties.resource', propname=u'propertiesresource', displayname=u'PE: Resource')
-@EntityField(name=u'sha512', propname=u'sha512', displayname=None)
-@EntityField(name=u'sublanguage', propname=u'sublanguage', displayname=None)
-@EntityField(name=u'res_name', propname=u'resname', displayname=None)
-@EntityField(name=u'sha256', propname=u'sha256', displayname=None)
-@EntityField(name=u'ssdeep', propname=u'ssdeep', displayname=None)
-@EntityField(name=u'yara_hits', propname=u'yarahits', displayname=None)
-@EntityField(name=u'type', propname=u'type', displayname=None)
-@EntityField(name=u'md5', propname=u'md5', displayname=None)
 @EntityField(name=u'size', propname=u'size', displayname=None)
-class peResource(BinaryEntity):
+@EntityField(name=u'issuer_serial', propname=u'issuerserial', displayname=None)
+@EntityField(name=u'certs', propname=u'certs', displayname=None)
+@EntityField(name=u'counter_head_before', propname=u'counterheadbefore', displayname=None)
+@EntityField(name=u'issuer', propname=u'issuer', displayname=None)
+@EntityField(name=u'countersignature', propname=u'countersignature', displayname=None)
+@EntityField(name=u'counter_head_after', propname=u'counterheadafter', displayname=None)
+@EntityField(name=u'source', propname=u'source', displayname=None)
+@EntityField(name=u'program', propname=u'program', displayname=None)
+@EntityField(name=u'counter_head_issuer', propname=u'counterheadissuer', displayname=None)
+@EntityField(name=u'before', propname=u'before', displayname=None)
+@EntityField(name=u'sha512', propname=u'sha512', displayname=None)
+@EntityField(name=u'chain_head', propname=u'chainhead', displayname=None)
+@EntityField(name=u'counter_head_serial', propname=u'counterheadserial', displayname=None)
+@EntityField(name=u'timestamp', propname=u'timestamp', displayname=None)
+@EntityField(name=u'after', propname=u'after', displayname=None)
+@EntityField(name=u'chain_head_serial', propname=u'chainheadserial', displayname=None)
+@EntityField(name=u'ssdeep', propname=u'ssdeep', displayname=None)
+@EntityField(name=u'md5', propname=u'md5', displayname=None)
+@EntityField(name=u'sha1', propname=u'sha1', displayname=None)
+@EntityField(name=u'properties.pecertificate', propname=u'propertiespecertificate', displayname=u'PE: Certificate')
+@EntityField(name=u'url', propname=u'url', displayname=None)
+@EntityField(name=u'sha256', propname=u'sha256', displayname=None)
+class peCert(BinaryEntity):
     pass
 
 
-@EntityField(name=u'properties.pehash', propname=u'propertiespehash', displayname=u'PE: peHash')
-class peHash(BinaryEntity):
+@EntityField(name=u'properties.imphash', propname=u'propertiesimphash', displayname=u'PE: Imphash')
+class peImphash(BinaryEntity):
+    pass
+
+
+@EntityField(name=u'properties.export', propname=u'propertiesexport', displayname=u'PE: Export')
+class Export(BinaryEntity):
+    pass
+
+
+@EntityField(name=u'properties.compiletime', propname=u'propertiescompiletime', displayname=u'Compile Time')
+class TimeDateStamp(BinaryEntity):
+    pass
+
+
+@EntityField(name=u'sha1', propname=u'sha1', displayname=None)
+@EntityField(name=u'not_after', propname=u'notafter', displayname=None)
+@EntityField(name=u'properties.certificate', propname=u'propertiescertificate', displayname=u'Certificate')
+@EntityField(name=u'serial', propname=u'serial', displayname=None)
+@EntityField(name=u'issuer', propname=u'issuer', displayname=None)
+@EntityField(name=u'not_before', propname=u'notbefore', displayname=None)
+@EntityField(name=u'md5', propname=u'md5', displayname=None)
+@EntityField(name=u'subject', propname=u'subject', displayname=None)
+class Certificate(BinaryEntity):
+    pass
+
+
+@EntityField(name=u'md5_decrypted', propname=u'md5decrypted', displayname=None)
+@EntityField(name=u'sha256_decrypted', propname=u'sha256decrypted', displayname=None)
+@EntityField(name=u'sha1', propname=u'sha1', displayname=None)
+@EntityField(name=u'versions', propname=u'versions', displayname=None)
+@EntityField(name=u'sha1_decrypted', propname=u'sha1decrypted', displayname=None)
+@EntityField(name=u'properties.richheader', propname=u'propertiesrichheader', displayname=u'PE: Rich Header')
+@EntityField(name=u'sha512_decrypted', propname=u'sha512decrypted', displayname=None)
+@EntityField(name=u'ssdeep', propname=u'ssdeep', displayname=None)
+@EntityField(name=u'sha256', propname=u'sha256', displayname=None)
+@EntityField(name=u'sha512', propname=u'sha512', displayname=None)
+@EntityField(name=u'ssdeep_decrypted', propname=u'ssdeepdecrypted', displayname=None)
+@EntityField(name=u'md5', propname=u'md5', displayname=None)
+class peRich(BinaryEntity):
     pass
 
 
@@ -181,6 +173,14 @@ class peHash(BinaryEntity):
 class DirectoryEntry(BinaryEntity):
     pass
 
+
+@EntityField(name=u'properties.import', propname=u'propertiesimport', displayname=u'PE: Import')
+class peImport(BinaryEntity):
+    pass
+
+
+class RobertliaukusEntity(Entity):
+    _namespace_ = u'robertliaukus'
 
 @EntityField(name=u'machine', propname=u'machine', displayname=None)
 @EntityField(name=u'package', propname=u'package', displayname=None)
@@ -218,6 +218,27 @@ class Hash(MalformityEntity):
 class VirustotalEntity(Entity):
     _namespace_ = u'virustotal'
 
+@EntityField(name=u'properties.vtpcap', propname=u'propertiesvtpcap', displayname=u'VT PCAP')
+class PCAP(VirustotalEntity):
+    pass
+
+
+@EntityField(name=u'domain_siblings', propname=u'domainsiblings', displayname=None)
+@EntityField(name=u'undetected_downloaded_samples', propname=u'undetecteddownloadedsamples', displayname=None)
+@EntityField(name=u'detected_downloaded_samples', propname=u'detecteddownloadedsamples', displayname=None)
+@EntityField(name=u'properties.vtdomainreport', propname=u'propertiesvtdomainreport', displayname=u'VT Domain Report')
+@EntityField(name=u'detected_referrer_samples', propname=u'detectedreferrersamples', displayname=None)
+@EntityField(name=u'subdomains', propname=u'subdomains', displayname=None)
+@EntityField(name=u'undetected_referrer_samples', propname=u'undetectedreferrersamples', displayname=None)
+@EntityField(name=u'resolutions', propname=u'resolutions', displayname=None)
+@EntityField(name=u'detected_urls', propname=u'detectedurls', displayname=None)
+@EntityField(name=u'undetected_communicating_samples', propname=u'undetectedcommunicatingsamples', displayname=None)
+@EntityField(name=u'detected_samples', propname=u'detectedsamples', displayname=None)
+@EntityField(name=u'pcaps', propname=u'pcaps', displayname=None)
+class VTDomainReport(VirustotalEntity):
+    pass
+
+
 @EntityField(name=u'file_type', propname=u'filetype', displayname=None)
 @EntityField(name=u'submission_names', propname=u'submissionnames', displayname=None)
 @EntityField(name=u'scan_date', propname=u'scandate', displayname=None)
@@ -231,12 +252,14 @@ class VirustotalEntity(Entity):
 @EntityField(name=u'machine', propname=u'machine', displayname=None)
 @EntityField(name=u'json', propname=u'json', displayname=None)
 @EntityField(name=u'parents', propname=u'parents', displayname=None)
+@EntityField(name=u'compiled', propname=u'compiled', displayname=None)
 @EntityField(name=u'imports', propname=u'imports', displayname=None)
 @EntityField(name=u'entrypoint', propname=u'entrypoint', displayname=None)
 @EntityField(name=u'sha256', propname=u'sha256', displayname=None)
 @EntityField(name=u'sections', propname=u'sections', displayname=None)
 @EntityField(name=u'properties.vtfile', propname=u'propertiesvtfile', displayname=u'VT File')
 @EntityField(name=u'scans', propname=u'scans', displayname=None)
+@EntityField(name=u'exports', propname=u'exports', displayname=None)
 @EntityField(name=u'tags', propname=u'tags', displayname=None)
 @EntityField(name=u'imphash', propname=u'imphash', displayname=None)
 @EntityField(name=u'unique_sources', propname=u'uniquesources', displayname=None)
@@ -253,6 +276,22 @@ class VirustotalEntity(Entity):
 @EntityField(name=u'itw_urls', propname=u'itwurls', displayname=None)
 @EntityField(name=u'last_seen', propname=u'lastseen', displayname=None)
 class vtfilereport(VirustotalEntity):
+    pass
+
+
+@EntityField(name=u'undetected_downloaded_samples', propname=u'undetecteddownloadedsamples', displayname=None)
+@EntityField(name=u'detected_downloaded_samples', propname=u'detecteddownloadedsamples', displayname=None)
+@EntityField(name=u'as_owner', propname=u'asowner', displayname=None)
+@EntityField(name=u'detected_referrer_samples', propname=u'detectedreferrersamples', displayname=None)
+@EntityField(name=u'undetected_referrer_samples', propname=u'undetectedreferrersamples', displayname=None)
+@EntityField(name=u'properties.vtipreport', propname=u'propertiesvtipreport', displayname=u'VT IP Report')
+@EntityField(name=u'country', propname=u'country', displayname=None)
+@EntityField(name=u'resolutions', propname=u'resolutions', displayname=None)
+@EntityField(name=u'detected_urls', propname=u'detectedurls', displayname=None)
+@EntityField(name=u'detected_communicating_samples', propname=u'detectedcommunicatingsamples', displayname=None)
+@EntityField(name=u'undetected_communicating_samples', propname=u'undetectedcommunicatingsamples', displayname=None)
+@EntityField(name=u'asn', propname=u'asn', displayname=None)
+class VTIPReport(VirustotalEntity):
     pass
 
 

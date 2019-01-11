@@ -24,7 +24,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Behavioral to Mutex (created)',
+    label='[ripVT] - Behavioral to Mutex (created)',
     description='Extracts mutexes from sandbox.',
     uuids=[ 'ripVT.v2.b2mut'],
     inputs=[ ( 'ripVT', vtfilereport )],

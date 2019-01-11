@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Report to Parents',
+    label='[ripVT] - Report to Parents',
     description='Translate Report to parent files.',
     uuids=[ 'ripVT.v2.report2parents'],
     inputs=[ ( 'ripVT', vtfilereport )],

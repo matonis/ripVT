@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Behavioral to Deleted Files (VT)',
+    label='[ripVT] - Behavioral to Deleted Files (VT)',
     description='Extracts Deleted files from sandbox.',
     uuids=[ 'ripVT.v2.b2df'],
     inputs=[ ( 'ripVT', vtfilereport )],

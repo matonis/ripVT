@@ -22,7 +22,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Search Detection Name (no engine)',
+    label='[ripVT] - Search Detection Name (no engine)',
     description='Searches Virus Total for hits matching detection.',
     uuids=[ 'ripVT.v2.search_detection_name_without'],
     inputs=[ ( 'ripVT', VTDetections )],

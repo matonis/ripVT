@@ -22,7 +22,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Search Imphash (VT)',
+    label='[ripVT] - Search Imphash (VT)',
     description='Searches Virus Total for hits matching an import hash',
     uuids=[ 'ripVT.v2.imphash2vt' ],
     inputs=[ ( 'ripVT', peImphash ) ],

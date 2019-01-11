@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Behavioral to Moved Files (VT)',
+    label='[ripVT] - Behavioral to Moved Files (VT)',
     description='Extracts Moved files from sandbox.',
     uuids=[ 'ripVT.v2.b2mf'],
     inputs=[ ( 'ripVT', vtfilereport )],

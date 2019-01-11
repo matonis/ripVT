@@ -2,10 +2,10 @@ from setuptools import setup, find_packages
 
 setup(
     name='ripVT',
-    author='@matonis',
+    author='lt-mmatonis-mac',
     version='1.0',
-    author_email='dfir.matonis@gmail.com',
-    description='VT transforms',
+    author_email='',
+    description='',
     license='GPL',
     packages=find_packages('src'),
     package_dir={ '' : 'src' },

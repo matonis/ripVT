@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Behavioral to Opened Files (VT)',
+    label='[ripVT] - Behavioral to Opened Files (VT)',
     description='Extracts opened files from sandbox.',
     uuids=[ 'ripVT.v2.b2of'],
     inputs=[ ( 'ripVT', vtfilereport )],

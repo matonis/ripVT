@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Send task to Cuckoo',
+    label='[ripVT] - Send task to Cuckoo',
     description='Sends task to cuckoo. If file not in repo, downloads and sends if permitted per ripVT.conf.',
     uuids=[ 'ripVT.v2.send_to_cuckoo'],
     inputs=[ ( 'ripVT', CuckooHash )],

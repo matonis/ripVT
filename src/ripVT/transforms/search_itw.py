@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Search ITW (VT)',
+    label='[ripVT] - Search ITW (VT)',
     description='Searches Virus Total for hits ITW',
     uuids=[ 'ripVT.v2.itw2vt_phrase','ripVT.v2.itw2vt_domain','ripVT.v2.itw2vt_ipv4','ripVT.v2.itw2vt_url','ripVT.v2.itw2vt_filename' ],
     inputs=[ ( 'ripVT', Phrase ),( 'ripVT', Domain ),( 'ripVT', IPv4Address ),( 'ripVT', URL ),('ripVT', Filename) ],

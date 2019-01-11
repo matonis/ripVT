@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Download File to Repo',
+    label='[ripVT] - Download File to Repo',
     description='Download selected file to repo.',
     uuids=[ 'ripVT.v2.download_hash','ripVT.v2.download_ripfile','ripVT.v2.download_from_report' ],
     inputs=[ ( 'ripVT', Hash ),( 'ripVT', PEFile ),('ripVT', vtfilereport) ],

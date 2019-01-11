@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Report to Detections (Individual)',
+    label='[ripVT] - Report to Detections (Individual)',
     description='Translate Report to AV detections.',
     uuids=[ 'ripVT.v2.report2detections_ind'],
     inputs=[ ( 'ripVT', vtfilereport )],

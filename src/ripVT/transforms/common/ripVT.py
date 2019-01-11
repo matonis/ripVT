@@ -3,7 +3,7 @@
 from canari.config import config
 from canari.maltego.message import MaltegoException
 from canari.maltego.utils import debug, progress
-from entities import vtfilereport
+from entities import vtfilereport,VTDomainReport,VTIPReport
 from canari.maltego.entities import URL,Domain,IPv4Address,EmailAddress
 
 import json
@@ -11,13 +11,120 @@ import os,sys
 import requests
 import re
 import hashlib
+import time
+from copy import deepcopy
 
+def search_vt_domain(search):
 
-def search_vt(search):
+    search=search.lower()
 
     API_KEY=config['api_key/key']
 
-    params = {'apikey': API_KEY, 'query': search}
+    params = {'domain': search , 'apikey': API_KEY}
+    response = requests.get('https://www.virustotal.com/vtapi/v2/domain/report', params=params)
+
+    if response.status_code == 200:
+        response_json = response.json()
+        domain_entity=vt_domain_report_to_entity(search,response_json)
+        return domain_entity
+    else:
+        debug("ripVT: received bad status code. %s" % response.status.code)
+        return False
+
+    response_json = response.json()
+
+def search_vt_ip(search):
+
+    API_KEY=config['api_key/key']
+
+    params = {'ip': search , 'apikey': API_KEY}
+    response = requests.get('https://www.virustotal.com/vtapi/v2/ip-address/report', params=params)
+    response_json = response.json()
+
+    if response.status_code == 200:
+        ip_entity=vt_ip_report_to_entity(search,response_json)
+        return ip_entity
+    else:
+        debug("ripVT: received bad status code. %s" % response.status.code)
+        return False
+        
+    response_json = response.json()
+
+def vt_domain_report_to_entity(search,t_json):
+
+    if t_json['response_code'] == 0:
+        debug("ripVT: Domain not found in VT repo.")
+        return False
+
+    e=VTDomainReport(str(search))
+    if 'detected_communicating_samples' in t_json:
+        e.detectedsamples=str(t_json['detected_communicating_samples']).encode('utf-8')
+    if 'detected_downloaded_samples' in t_json:
+        e.detecteddownloadedsamples=str(t_json['detected_downloaded_samples']).encode('utf-8')
+    if 'detected_referrer_samples' in t_json:
+        e.detectedreferrersamples=str(t_json['detected_referrer_samples']).encode('utf-8')
+    if 'detected_urls' in t_json:
+        e.detectedurls=str(t_json['detected_urls']).encode('utf-8')
+    if 'resolutions' in t_json:
+        e.resolutions=str(t_json['resolutions']).encode('utf-8')
+    if 'subdomains' in t_json:
+        e.subdomains=str(t_json['subdomains']).encode('utf-8')
+    if 'pcaps' in t_json:
+        e.pcaps=str(t_json['pcaps']).encode('utf-8')
+    if 'undetected_communicating_samples' in t_json:
+        e.undetectedcommunicatingsamples=str(t_json['undetected_communicating_samples']).encode('utf-8')
+    if 'undetected_downloaded_samples' in t_json:
+        e.undetecteddownloadedsamples=str(t_json['undetected_downloaded_samples']).encode('utf-8')
+    if 'undetected_referrer_samples' in t_json:
+        e.undetectedreferrersamples=str(t_json['undetected_referrer_samples']).encode('utf-8')
+
+    return e
+
+def vt_ip_report_to_entity(search,t_json):
+
+    if t_json['response_code'] == 0:
+        debug("ripVT: IP not found in VT repo.")
+        return False
+
+    e=VTIPReport(str(search))
+    if 'as_owner' in t_json:
+        e.asowner=str(t_json['as_owner']).encode('utf-8')
+    if 'asn' in t_json:
+        e.asn=str(t_json['asn']).encode('utf-8')
+    if 'country' in t_json:
+        e.country=str(t_json['country']).encode('utf-8')
+    if 'detected_communicating_samples' in t_json:
+        e.detectedcommunicatingsamples=str(t_json['detected_communicating_samples']).encode('utf-8')
+    if 'detected_downloaded_samples' in t_json:
+        e.detecteddownloadedsamples=str(t_json['detected_downloaded_samples']).encode('utf-8')
+    if 'detected_referrer_samples' in t_json:
+        e.detectedreferrersamples=str(t_json['detected_referrer_samples']).encode('utf-8')
+    if 'detected_urls' in t_json:
+        e.detectedurls=str(t_json['detected_urls']).encode('utf-8')
+    if 'subdomains' in t_json:
+        e.subdomains=str(t_json['subdomains']).encode('utf-8')
+    if 'resolutions' in t_json:
+        e.resolutions=str(t_json['resolutions']).encode('utf-8')
+    if 'undetected_communicating_samples' in t_json:
+        e.undetectedcommunicatingsamples=str(t_json['undetected_communicating_samples']).encode('utf-8')
+    if 'undetected_downloaded_samples' in t_json:
+        e.undetecteddownloadedsamples=str(t_json['undetected_downloaded_samples']).encode('utf-8')
+    if 'undetected_referrer_samples' in t_json:
+        e.undetectedreferrersamples=str(t_json['undetected_referrer_samples']).encode('utf-8')
+
+    return e
+
+
+def search_vt(search,offset=False):
+
+    API_KEY=config['api_key/key']
+
+    paginate=config['ripVT/paginate']
+
+    if not offset:
+        offset=''
+
+    params = {'apikey': API_KEY, 'query': search, 'offset':offset}
 
     response = requests.get('https://www.virustotal.com/vtapi/v2/file/search', params=params)
 
@@ -25,7 +132,13 @@ def search_vt(search):
         json_response=response.json()
         if json_response.has_key("hashes"):
             if len(json_response['hashes']) > 0:
-                return json_response['hashes']
+                hashes=deepcopy(json_response['hashes'])
+                if paginate == "True":
+                    if 'offset' in json_response:
+                        hashes+=search_vt(search,offset=json_response['offset'])
+                    return hashes
+                else:
+                    return hashes
             else:
                 debug("ripVT: No hits received.")
                 return []
@@ -35,8 +148,6 @@ def search_vt(search):
     else:
         debug("ripVT: received bad status code. %s" % response.status_code)
         return False
-    response_json = response.json()
-
 
 def get_full_report(hash_val):
 
@@ -126,6 +237,16 @@ def report_to_rentity(tmp_json):
 
         if t_json['additional_info'].has_key('imports'):
             e.imports=t_json['additional_info']['imports']
+        else:
+            e.imports=""
+
+        if t_json['additional_info'].has_key('exports'):
+            e.exports=t_json['additional_info']['exports']
+        else:
+            e.imports=""
+
+        if t_json['additional_info'].has_key('pe-timestamp'):
+            e.compiled=time.strftime('%Y-%m-%dT%H:%M:%S', time.gmtime(t_json['additional_info']['pe-timestamp']))
         else:
             e.imports=""
 

@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Behavioral to Downloaded Files (VT)',
+    label='[ripVT] - Behavioral to Downloaded Files (VT)',
     description='Extracts Downloaded files from sandbox.',
     uuids=[ 'ripVT.v2.b2dlf'],
     inputs=[ ( 'ripVT', vtfilereport )],

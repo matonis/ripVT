@@ -22,7 +22,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Search Chain Head Serial (VT)',
+    label='[ripVT] - Search Chain Head Serial (VT)',
     description='Searches Virus Total for hits matching chain head serial string.',
     uuids=[ 'ripVT.v2.pecert_chain_serial_vt_search'],
     inputs=[ ( 'ripVT', peCert )],

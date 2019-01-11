@@ -24,7 +24,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Behavioral to Network (all)',
+    label='[ripVT] - Behavioral to Network (all)',
     description='Extracts outbound connections from sandbox.',
     uuids=[ 'ripVT.v2.b2netall'],
     inputs=[ ( 'ripVT', vtfilereport )],
@@ -33,8 +33,12 @@ __all__ = [
 )
 def dotransform(request, response):
     
-    if request.fields['behavioral']!= "false":
-        behavior=ast.literal_eval(request.fields['behavior_data'])
+    if request.fields['behavioral']!= "":
+        try:
+            behavior=ast.literal_eval(request.fields['behavior_data'])
+        except Exception as e:
+            debug("Entity has no behavioral data")
+            return response
         if behavior.has_key("network"):
             if behavior['network'].has_key('dns'):
                 for item in behavior['network']['dns']:

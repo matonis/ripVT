@@ -22,7 +22,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Search Section (VT)',
+    label='[ripVT] - Search Section (VT)',
     description='Searches Virus Total for hits matching a section.',
     uuids=[ 'ripVT.v2.section2vt' ],
     inputs=[ ( 'ripVT', PESection ) ],

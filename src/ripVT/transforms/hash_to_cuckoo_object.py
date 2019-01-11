@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Convert to Cuckoo Object',
+    label='[ripVT] - Convert to Cuckoo Object',
     description='Convert hash to Cuckoo object for control of cuckoo sessions.',
     uuids=[ 'ripVT.v2.2cuckoo_hash','ripVT.v2.2cuckoo_ripfile','ripVT.v2.2cuckoo_from_report' ],
     inputs=[ ( 'ripVT', Hash ),( 'ripVT', PEFile ),('ripVT', vtfilereport) ],

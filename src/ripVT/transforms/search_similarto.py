@@ -22,7 +22,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Search Similiar-To (VT)',
+    label='[ripVT] - Search Similiar-To (VT)',
     description='Searches Virus Total for hits similar-to source.',
     uuids=[ 'ripVT.v2.similar2vt','ripVT.v2.similar2vt_file','ripVT.v2.similar2vt_report' ],
     inputs=[ ( 'ripVT', Hash ), ( 'ripVT', PEFile ),('ripVT',vtfilereport)],

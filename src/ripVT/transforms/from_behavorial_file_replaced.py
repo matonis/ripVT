@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Behavioral to Replaced Files (VT)',
+    label='[ripVT] - Behavioral to Replaced Files (VT)',
     description='Extracts replaced files from sandbox.',
     uuids=[ 'ripVT.v2.b2replf'],
     inputs=[ ( 'ripVT', vtfilereport )],

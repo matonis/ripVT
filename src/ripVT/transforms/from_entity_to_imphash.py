@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Imphash from Entity',
+    label='[ripVT] - Imphash from Entity',
     description='Get imphash from entity object.',
     uuids=[ 'ripVT.v2.to_imphash_pefile','ripVT.v2.to_imphash_filereport' ],
     inputs=[ ( 'ripVT', PEFile ),('ripVT', vtfilereport) ],

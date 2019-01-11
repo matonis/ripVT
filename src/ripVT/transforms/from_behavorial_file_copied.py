@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Behavioral to Copied Files (VT)',
+    label='[ripVT] - Behavioral to Copied Files (VT)',
     description='Extracts copied files from sandbox.',
     uuids=[ 'ripVT.v2.b2cf'],
     inputs=[ ( 'ripVT', vtfilereport )],

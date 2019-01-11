@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Behavioral to Written (created) Files (VT)',
+    label='[ripVT] - Behavioral to Written (created) Files (VT)',
     description='Extracts written files from sandbox.',
     uuids=[ 'ripVT.v2.b2wrf'],
     inputs=[ ( 'ripVT', vtfilereport )],

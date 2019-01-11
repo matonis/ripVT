@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Search Engines (VT)',
+    label='[ripVT] - Search Engines (VT)',
     description='Searches Virus Total for hits matching an AV signature.',
     uuids=[ 'ripVT.v2.engines2vt' ],
     inputs=[ ( 'ripVT', Phrase ) ],

@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Get File Report (VT)',
+    label='[ripVT] - Get File Report (VT)',
     description='Searches Virus Total for file report with all information.',
     uuids=[ 'ripVT.v2.full_report_hash','ripVT.v2.full_report_ripfile' ],
     inputs=[ ( 'ripVT', Hash ),( 'ripVT', PEFile ) ],

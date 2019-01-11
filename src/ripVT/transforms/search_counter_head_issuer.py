@@ -22,7 +22,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Search Counter Head Issuer (VT)',
+    label='[ripVT] - Search Counter Head Issuer (VT)',
     description='Searches Virus Total for hits matching counter head string.',
     uuids=[ 'ripVT.v2.pecert_counter_head_vt_search'],
     inputs=[ ( 'ripVT', peCert )],

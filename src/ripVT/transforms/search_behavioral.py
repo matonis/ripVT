@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 @configure(
-    label='Search Behavior (VT)',
+    label='[ripVT] - Search Behavior (VT)',
     description='Searches Virus Total for hits matching a behavioral string.',
     uuids=[ 'ripVT.v2.behavorial_2_vt_Filename','ripVT.v2.behavorial_2_vt_URL','ripVT.v2.behavorial_2_vt_Domain','ripVT.v2.behavorial_2_vt_IPv4Address','ripVT.v2.behavorial_2_vt_EmailAddress','ripVT.v2.behavorial_2_vt_Phrase'],
     inputs=[ ( 'ripVT', Filename ), ( 'ripVT', URL ),( 'ripVT', Domain ),( 'ripVT', IPv4Address ),( 'ripVT', EmailAddress ),( 'ripVT', Phrase ),],
