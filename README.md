@@ -1,6 +1,6 @@
 # ripVT
 
-Maltego Canari transforms for Virus Total private API.
+Maltego Canari transforms for Virus Total private API. Provided AS-IS, no warranties, no guarantees. 
 
 # Installation
 
