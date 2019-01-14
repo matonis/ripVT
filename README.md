@@ -55,12 +55,12 @@ Multiple unique entities enable forward & reverse searches. Unique graphically-d
 * Subdomains
 * Detected URLs
 
-**Detections -> **
+**Detections ->**
 
 * Search Detection Name (Engine Included)
 * Search Detection Name (No Engine
 
-**Cuckoo -> (Report ID) **
+**Cuckoo -> (Report ID **
 
 * Report -> Network
 
