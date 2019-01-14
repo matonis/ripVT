@@ -4,6 +4,26 @@ Maltego Canari transforms for Virus Total private API. Provided AS-IS, no warran
 
 No jokes in this repo. It's as serious as you are.
 
+
+
+# Installation
+
+1. Requires Canari, specifically [this branch/version](https://github.com/allfro/canari/tree/c90ed9f0f0fb5075358d7a1a4c1080aac3d4e6bc)
+2. Install [Malformity](https://github.com/digital4rensics/Malformity)
+3.
+```bash
+sudo python setup.py install
+canari create-profile ripVT
+```
+4. Import generated ripVT.mtz
+5. Import entities stored at:
+```bash
+src/ripVT/resources/external/entities.mtz
+```
+
+6. Copy src/ripVT/resources/etc/ripVT.conf to ~/.canari/
+7. Pivot
+
 # Pivots
 Multiple unique entities enable forward & reverse searches. Unique graphically-distinguished icons.
 
@@ -64,25 +84,6 @@ Multiple unique entities enable forward & reverse searches. Unique graphically-d
 
 * Report -> Network
 
-
-
-# Installation
-
-1. Requires Canari, specifically [this branch/version](https://github.com/allfro/canari/tree/c90ed9f0f0fb5075358d7a1a4c1080aac3d4e6bc)
-2. Install [Malformity](https://github.com/digital4rensics/Malformity)
-3.
-```bash
-sudo python setup.py install
-canari create-profile ripVT
-```
-4. Import generated ripVT.mtz
-5. Import entities stored at:
-```bash
-src/ripVT/resources/external/entities.mtz
-```
-
-6. Copy src/ripVT/resources/etc/ripVT.conf to ~/.canari/
-7. Pivot
 
 
 # Usage
