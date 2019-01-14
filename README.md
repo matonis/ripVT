@@ -7,7 +7,7 @@ No jokes in this repo. It's as serious as you are.
 # Pivots
 Multiple unique entities enable forward & reverse searches. Unique graphically-distinguished icons.
 
-**Search (Phrase Entity) -> **
+**Search (Phrase Entity) ->**
 
 * Generic Search
 * Behavioral
@@ -17,7 +17,7 @@ Multiple unique entities enable forward & reverse searches. Unique graphically-d
 **Generic**
 * Hash -> Download to Repository
 
-**Hash -> VT File Report -> **
+**Hash -> VT File Report ->**
 
 * Behavioral (Copied Files, Deleted, Downloaded, Moved, Mutex, Network, Opened, Read, Replaced, Written)
 * Imphash
