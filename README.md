@@ -5,7 +5,7 @@ Maltego Canari transforms for Virus Total private API. Provided AS-IS, no warran
 No jokes in this repo. It's as serious as you are.
 
 ![Visual Guide](https://github.com/matonis/ripVT/blob/master/pivot.png)
-
+![Visual Guide 2](https://github.com/matonis/ripVT/blob/master/entity.png)
 
 # Installation
 
